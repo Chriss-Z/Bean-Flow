@@ -1,0 +1,104 @@
+.chart {
+  width: 100%;
+  height: 100%;
+}
+.chart-header {
+  padding: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.chart-header h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #000000;
+}
+.period-filter {
+  display: flex;
+  width: 267px;
+  height: 34px;
+  margin-top: -15px;
+  margin-left: 15px;
+  border: 1px solid #b5a18f;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.period-filter button {
+  flex: 1;
+  border: none;
+  background: white;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.period-filter button.active {
+  background: #f4e8db;
+  border-right: 1px solid #b5a18f;
+  border-left: 1px solid #b5a18f;
+}
+.chart-filter select {
+  width: 212px;
+  height: 32px;
+  border: 1px solid #d8d8d8;
+  border-radius: 10px;
+
+  padding: 0 10px;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  background: white;
+  cursor: pointer;
+
+  outline: none;
+}
+
+.chart-body {
+  display: flex;
+  gap: 10px;
+}
+
+.chart-y-axis {
+  width: 100px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 20px;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+.chart-content {
+  flex: 1;
+}
+
+.chart-graph {
+  width: 100%;
+  height: 245px;
+  overflow: hidden;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.recharts-surface {
+  outline: none;
+}
+
+.recharts-wrapper {
+  outline: none;
+}
+
+.chart-x-axis {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  padding: 0 15px;
+}
+
+.x-label {
+  font-size: 8px;
+  color: #666;
+}
+.y-label {
+  font-size: 8px;
+}

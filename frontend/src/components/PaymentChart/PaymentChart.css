@@ -1,0 +1,107 @@
+.payment {
+  width: auto;
+  height: 356px;
+}
+.payment-content {
+  display: flex;
+  align-items: flex-start;
+  padding: 0 20px;
+  gap: 20px;
+}
+.payment-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  font-size: 14px;
+  margin-left: -35px;
+}
+.recharts-sector:focus,
+.recharts-sector:focus-visible {
+  outline: none;
+}
+
+.payment-item-name {
+  font-size: 12px;
+  font-weight: 700;
+}
+.payment-item-percent {
+  font-size: 14px;
+  padding-left: 60px;
+  font-weight: 500;
+}
+
+.payment-item-total {
+  font-size: 14px;
+  color: #000000;
+  margin: 0;
+  white-space: nowrap;
+  padding-top: 5px;
+  padding-left: 30px;
+}
+.payment-header {
+  padding: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.payment-header h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #000000;
+}
+.payment-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.payment-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Warna tiap metode */
+.payment-dot.qris {
+  background: #a3a3a3;
+}
+
+.payment-dot.tunai {
+  background: #22c55e;
+}
+
+.payment-dot.debit {
+  background: #3b82f6;
+}
+.pie-container {
+  width: 290px;
+  height: 250px;
+  padding-left: 1px;
+}
+.pie-total {
+  font-size: 16px;
+  fill: #777;
+}
+.pie-value {
+  font-size: 15px;
+  font-weight: 600;
+  fill: #000;
+}
+.pie-filter select {
+  width: 212px;
+  height: 32px;
+  border: 1px solid #d8d8d8;
+  border-radius: 10px;
+
+  padding: 0 10px;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  background: white;
+  cursor: pointer;
+
+  outline: none;
+}

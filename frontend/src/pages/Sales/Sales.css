@@ -1,0 +1,299 @@
+.sales {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+/* mengikuti dashboard */
+
+.card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Greeting */
+
+.greeting {
+  margin-bottom: 24px;
+}
+
+.greeting h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.greeting p {
+  margin-top: 8px;
+  font-size: 16px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.wave {
+  display: inline-block;
+  transform-origin: 70% 70%;
+  animation: wave 2s infinite;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+/* Filter */
+
+.filter-card {
+  height: 116px;
+
+  padding: 24px;
+}
+
+/* Row */
+
+.sales-row {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+.sales-left {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Transaction */
+
+.transaction-card {
+  height: 550px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.transaction-content {
+  flex: 1;
+  overflow-y: auto;
+}
+.transaction-loading,
+.transaction-error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+  color: #6b7280;
+  font-size: 14px;
+}
+.detail-card {
+  width: 0;
+  height: 685px;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Detail */
+
+.detail-card {
+  width: 0;
+  height: 685px;
+
+  opacity: 0;
+  overflow: hidden;
+
+  transition: all 0.3s ease;
+}
+
+.detail-card.open {
+  width: 360px;
+  padding: 24px;
+  opacity: 1;
+}
+.filter-search {
+  height: 35px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  border: 1px solid #e5e7eb;
+
+  border-radius: 10px;
+
+  padding: 0 12px;
+}
+
+.search-icon {
+  width: 24px;
+  height: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-right: 8px;
+}
+
+.filter-search input {
+  flex: 1;
+  border: none;
+  outline: none;
+
+  font-size: 14px;
+  font-family: Poppins, sans-serif;
+}
+
+/* BARIS BAWAH */
+
+/* FILTER ROW */
+
+.filter-row {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  padding-top: 12px;
+}
+
+/* wrapper select */
+
+.filter-select {
+  position: relative;
+}
+
+/* ukuran dropdown */
+
+.filter-select:nth-child(1) {
+  width: 126px;
+}
+
+.filter-select:nth-child(2) {
+  width: 126px;
+}
+
+.filter-select:nth-child(3) {
+  width: 133px;
+}
+
+.filter-select:nth-child(4) {
+  width: 119px;
+}
+
+.filter-select:nth-child(5) {
+  width: 163px;
+}
+
+/* icon */
+
+.filter-icon {
+  position: absolute;
+
+  left: 10px;
+
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 18px;
+
+  height: 18px;
+
+  color: #8b5e3c;
+
+  z-index: 2;
+
+  pointer-events: none;
+}
+
+/* dropdown */
+
+.filter-select select {
+  width: 100%;
+  height: 35px;
+
+  border: 1px solid #d6d3d1;
+  border-radius: 10px;
+
+  background: white;
+
+  padding-left: 12px;
+  padding-right: 28px;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  color: #5c3b28;
+
+  cursor: pointer;
+
+  outline: none;
+
+  appearance: none;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+
+/* khusus dropdown pertama karena ada icon */
+
+.filter-select:first-child select {
+  padding-left: 32px;
+}
+
+.filter-select select:hover {
+  border-color: #8b5e3c;
+}
+
+.filter-select select:focus {
+  border-color: #8b5e3c;
+
+  box-shadow: 0 0 0 3px rgba(139, 94, 60, 0.15);
+}
+.reset-btn {
+  background: #ffffff;
+  border: 1px solid #8b5e3c;
+  border-radius: 10px;
+
+  padding: 6px 12px;
+
+  font-size: 13px;
+  font-weight: 500;
+  color: #8b5e3c;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}

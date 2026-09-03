@@ -1,0 +1,135 @@
+.history-list {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 24px 24px;
+}
+
+.history-row {
+  display: grid;
+  grid-template-columns: 1.6fr 0.8fr 1fr 1fr 1fr 0.9fr;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 13px;
+}
+.history-body.sales-scroll {
+  height: 550px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.history-body.sales-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.history-body.sales-scroll::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 10px;
+}
+
+.history-body.sales-scroll::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+
+.history-body.sales-scroll::-webkit-scrollbar-thumb:hover {
+  background: #8b5e3c;
+}
+.history-row.with-action {
+  grid-template-columns:
+    1.6fr
+    0.8fr
+    1fr
+    1fr
+    1fr
+    0.9fr
+    0.8fr;
+}
+.history-row.with-action .eye-btn {
+  margin-left: 15px;
+}
+.history-head {
+  color: #9ca3af;
+  font-size: 12px;
+  font-weight: 600;
+  border-bottom: 1px solid #e5e7eb;
+}
+.history-body {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 0;
+}
+
+.history-body.scroll {
+  max-height: 160px;
+  overflow-y: auto;
+}
+
+.history-body.dashboard-scroll {
+  max-height: 160px;
+  overflow-y: auto;
+}
+.history-body.sales-scroll {
+  height: 100%;
+  flex: 1;
+  overflow-y: auto;
+}
+.status {
+  width: fit-content;
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status.completed {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.status.pending {
+  background: #fef3c7;
+  color: #b45309;
+}
+
+.status.refund {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+.payment-method {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.payment-method svg {
+  width: 16px;
+  height: 16px;
+  color: #6b7280;
+  flex-shrink: 0;
+}
+.eye-btn {
+  width: 32px;
+  height: 32px;
+
+  border: none;
+  background: #f3f4f6;
+
+  border-radius: 8px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  color: #8b5e3c;
+
+  transition: 0.2s;
+}
+
+.eye-btn:hover {
+  background: #8b5e3c;
+  color: white;
+}

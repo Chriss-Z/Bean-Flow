@@ -1,0 +1,1306 @@
+/* ========================================
+   REPORT
+======================================== */
+
+.report {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ========================================
+   HEADER
+======================================== */
+
+.report-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.report-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* ========================================
+   MINIMAL DATE RANGE PICKER
+======================================== */
+
+.report-date-picker {
+  position: relative;
+}
+
+/* DATE BUTTON */
+
+.report-date-btn {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  height: 44px;
+  padding: 0 15px;
+
+  background: #fff;
+  border: 1px solid #eef0f3;
+  border-radius: 12px;
+
+  color: #1f2430;
+  font-size: 13px;
+  font-weight: 500;
+
+  cursor: pointer;
+
+  box-shadow: 0 1px 2px rgba(31, 36, 48, 0.04);
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.report-date-btn:hover {
+  border-color: #e2c3ac;
+  box-shadow: 0 4px 14px rgba(173, 93, 43, 0.08);
+}
+
+.report-date-btn.is-open {
+  border-color: #ad5d2b;
+  box-shadow: 0 0 0 3px rgba(173, 93, 43, 0.08);
+}
+
+.date-calendar-icon {
+  color: #ad5d2b;
+  font-size: 14px;
+}
+
+.date-separator {
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+/* ========================================
+   POPUP
+======================================== */
+
+.calendar-popup {
+  position: absolute;
+
+  top: 52px;
+  right: 0;
+
+  z-index: 999;
+
+  width: 352px;
+
+  background: #fff;
+
+  border: 1px solid rgba(31, 36, 48, 0.05);
+  border-radius: 18px;
+
+  box-shadow: 0 15px 40px rgba(31, 36, 48, 0.12);
+
+  overflow: hidden;
+
+  animation: calendarPopup 0.18s ease;
+}
+
+@keyframes calendarPopup {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   SUMMARY
+======================================== */
+
+.calendar-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 16px 18px 14px;
+}
+
+.calendar-summary-dates {
+  display: flex;
+  align-items: center;
+
+  font-size: 15px;
+  font-weight: 600;
+  color: #1f2430;
+}
+
+.calendar-to {
+  margin: 0 7px;
+
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+.calendar-summary-badge {
+  padding: 5px 10px;
+
+  border-radius: 20px;
+
+  background: #f8f5f2;
+  color: #8f4a20;
+
+  font-size: 11px;
+  font-weight: 600;
+
+  white-space: nowrap;
+}
+
+.calendar-summary-badge.is-invalid {
+  background: #fbeee7;
+  color: #b3441f;
+}
+
+/* ========================================
+   PRESETS
+======================================== */
+
+.calendar-presets {
+  display: flex;
+  flex-direction: column;
+
+  gap: 2px;
+
+  padding: 0 10px 10px;
+
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.calendar-presets-title,
+.calendar-custom-title {
+  padding: 10px 10px 8px;
+
+  font-size: 10.5px;
+  font-weight: 600;
+
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+
+  color: #9ca3af;
+}
+
+.calendar-presets button {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  gap: 1px;
+
+  width: 100%;
+
+  padding: 9px 12px 9px 16px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: transparent;
+
+  color: #1f2430;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.18s ease,
+    color 0.18s ease;
+}
+
+.calendar-presets button::before {
+  content: "";
+
+  position: absolute;
+
+  left: 4px;
+  top: 50%;
+
+  width: 3px;
+  height: 0;
+
+  transform: translateY(-50%);
+
+  border-radius: 3px;
+
+  background: #ad5d2b;
+
+  transition: height 0.18s ease;
+}
+
+.calendar-presets button:hover {
+  background: #f8f5f2;
+  color: #8f4a20;
+}
+
+.calendar-presets button:hover::before {
+  height: 16px;
+}
+
+.calendar-presets button strong {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.calendar-presets button span {
+  font-size: 11px;
+  font-weight: 400;
+
+  color: #6b7280;
+}
+
+.calendar-presets button:hover span {
+  color: #b9764a;
+}
+
+/* ========================================
+   CUSTOM CALENDAR
+======================================== */
+
+.calendar-custom {
+  padding: 0 14px 8px;
+}
+
+.calendar-custom-title {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+/* ========================================
+   REACT DATE RANGE OVERRIDE
+======================================== */
+
+.calendar-custom .rdrCalendarWrapper {
+  width: 100%;
+
+  font-family: inherit;
+
+  background: #fff;
+}
+
+.calendar-custom .rdrMonth {
+  width: 100%;
+  padding: 0;
+}
+
+.calendar-custom .rdrMonthAndYearWrapper {
+  height: 42px;
+  padding: 0;
+}
+
+.calendar-custom .rdrMonthAndYearPickers {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.calendar-custom .rdrMonthAndYearPickers select {
+  font-size: 13px;
+  font-weight: 600;
+
+  color: #1f2430;
+}
+
+.calendar-custom .rdrNextPrevButton {
+  width: 26px;
+  height: 26px;
+
+  margin: 0;
+
+  background: transparent;
+
+  border-radius: 8px;
+}
+
+.calendar-custom .rdrNextPrevButton:hover {
+  background: #f8f5f2;
+}
+
+.calendar-custom .rdrNextPrevButton i {
+  border-width: 0 1px 1px 0;
+  border-color: #6b7280;
+}
+
+/* WEEK DAYS */
+
+.calendar-custom .rdrWeekDays {
+  margin-bottom: 3px;
+}
+
+.calendar-custom .rdrWeekDay {
+  color: #9ca3af;
+
+  font-size: 10.5px;
+  font-weight: 600;
+}
+
+/* DAYS */
+
+.calendar-custom .rdrDays {
+  row-gap: 3px;
+}
+
+.calendar-custom .rdrDay {
+  height: 34px;
+}
+
+.calendar-custom .rdrDayNumber span {
+  font-size: 12.5px;
+  font-weight: 500;
+
+  color: #1f2430;
+}
+
+.calendar-custom .rdrDayPassive .rdrDayNumber span {
+  color: #d7dbe1;
+}
+
+/* RANGE */
+
+.calendar-custom .rdrInRange {
+  background: rgba(173, 93, 43, 0.09);
+}
+
+.calendar-custom .rdrStartEdge,
+.calendar-custom .rdrEndEdge {
+  background: #ad5d2b;
+}
+
+.calendar-custom .rdrStartEdge,
+.calendar-custom .rdrEndEdge,
+.calendar-custom .rdrDayStartPreview,
+.calendar-custom .rdrDayEndPreview {
+  border-radius: 50%;
+}
+
+.calendar-custom .rdrDayStartPreview,
+.calendar-custom .rdrDayEndPreview {
+  border-color: #ad5d2b;
+}
+
+.calendar-custom .rdrDayToday .rdrDayNumber span::after {
+  background: #ad5d2b;
+}
+
+/* ========================================
+   INFO
+======================================== */
+
+.calendar-info {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  padding: 12px 18px 14px;
+
+  border-top: 1px solid #f1f5f9;
+
+  color: #9ca3af;
+
+  font-size: 11px;
+}
+
+.calendar-info span:first-child {
+  font-size: 13px;
+}
+
+.calendar-info.is-invalid {
+  color: #b3441f;
+} /* ========================================
+   EXPORT BUTTON
+======================================== */
+
+.btn-export {
+  height: 44px;
+
+  padding: 0 18px;
+
+  border: none;
+  border-radius: 12px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: 0.25s;
+}
+
+.btn-export.pdf {
+  background: #dc2626;
+  color: white;
+}
+
+.btn-export.excel {
+  background: #16a34a;
+  color: white;
+}
+
+.btn-export:hover {
+  transform: translateY(-2px);
+}
+
+/* ========================================
+   REPORT STATISTICS
+======================================== */
+
+.report-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.report-card {
+  height: 124px;
+
+  background: #fff;
+
+  border: 1px solid #edf1f5;
+
+  border-radius: 16px;
+
+  padding: 18px 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  transition: 0.25s;
+}
+
+.report-card:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* ---------- Header ---------- */
+
+.report-card-header {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 8px;
+}
+
+.report-card-icon {
+  width: 46px;
+  height: 46px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  font-size: 24px;
+  flex-shrink: 0;
+}
+/* Gold - Total Revenue */
+.report-card-icon.revenue-icon {
+  background: #fff7d6;
+  color: #eab308;
+}
+
+/* Green - Transactions */
+.report-card-icon.transaction-icon {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+/* Orange - Profit */
+.report-card-icon.profit-icon {
+  background: #ffedd5;
+  color: #f97316;
+}
+
+/* Purple - Orders */
+.report-card-icon.order-icon {
+  background: #f3e8ff;
+  color: #9333ea;
+}
+.report-card-title {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* sebelumnya 10px */
+  margin-left: 6px;
+}
+
+/* ---------- Value ---------- */
+
+.report-card-value {
+  margin-top: 10px;
+  margin-bottom: 8px;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* ---------- Footer ---------- */
+
+.report-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.report-card-growth {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.report-card-growth.positive {
+  color: #16a34a;
+}
+
+.report-card-growth.negative {
+  color: #dc2626;
+}
+
+.report-card-text {
+  font-size: 13px;
+
+  color: #9ca3af;
+}
+
+/* ========================================
+   SALES TREND
+======================================== */
+
+.report-grid-top {
+  display: grid;
+
+  grid-template-columns: 2fr 1fr;
+
+  gap: 20px;
+}
+
+.sales-trend-card {
+  height: 350px;
+  width: 100%;
+
+  background: white;
+
+  border-radius: 16px;
+
+  border: 1px solid #edf1f5;
+
+  overflow: hidden;
+}
+
+.top-cashier-card {
+  height: 350px;
+
+  background: white;
+
+  border-radius: 16px;
+
+  border: 1px solid #edf1f5;
+
+  padding: 24px;
+
+  overflow: hidden;
+}
+
+.top-cashier-header {
+  margin-bottom: 20px;
+}
+
+.top-cashier-header h3 {
+  margin: 0;
+
+  font-size: 20px;
+  font-weight: 600;
+
+  color: #111827;
+}
+
+.top-cashier-table {
+  width: 100%;
+}
+
+/* =========================
+   TABLE ROW
+========================= */
+
+.top-cashier-row {
+  display: grid;
+
+  grid-template-columns:
+    70px
+    1.8fr
+    1fr
+    1.2fr;
+
+  align-items: center;
+
+  min-height: 48px;
+
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.top-cashier-table-header {
+  min-height: 36px;
+
+  border-bottom: 1px solid #e5e7eb;
+
+  font-size: 12px;
+
+  font-weight: 600;
+
+  color: #9ca3af;
+}
+.top-cashier-table-body {
+  max-height: 195px;
+  overflow-y: auto;
+
+  scrollbar-width: thin;
+  scrollbar-color: #d1d5db transparent;
+}
+.top-cashier-table-body::-webkit-scrollbar {
+  width: 5px;
+}
+
+.top-cashier-table-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.top-cashier-table-body::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 10px;
+}
+
+.top-cashier-table-body::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Transactions dibuat tengah */
+.top-cashier-table-header span:nth-child(3),
+.top-cashier-row .cashier-transactions {
+  text-align: center;
+}
+
+/* Total Sale */
+.top-cashier-table-header span:nth-child(4),
+.top-cashier-row .cashier-total {
+  text-align: right;
+}
+.cashier-rank {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 30px;
+}
+
+.rank-badge {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* =========================
+   🥇 RANK 1
+========================= */
+
+.rank-1 {
+  width: 38px;
+  height: 38px;
+
+  background: linear-gradient(135deg, #fff8d6, #ffe58a);
+
+  color: #d49a00;
+
+  border: 1px solid #f2cf58;
+
+  box-shadow: 0 4px 10px rgba(212, 154, 0, 0.15);
+}
+
+.rank-1 svg {
+  font-size: 20px;
+}
+
+/* =========================
+   🥈 RANK 2
+========================= */
+
+.rank-2 {
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+
+  color: #64748b;
+
+  border: 1px solid #cbd5e1;
+
+  box-shadow: 0 3px 8px rgba(100, 116, 139, 0.12);
+}
+
+.rank-2 svg {
+  font-size: 18px;
+}
+
+/* =========================
+   🥉 RANK 3
+========================= */
+
+.rank-3 {
+  background: linear-gradient(135deg, #fff1e6, #f5c9a5);
+
+  color: #b86b32;
+
+  border: 1px solid #e3a875;
+
+  box-shadow: 0 3px 8px rgba(184, 107, 50, 0.12);
+}
+
+.rank-3 svg {
+  font-size: 18px;
+}
+
+/* Rank 4 & 5 */
+
+.rank-4,
+.rank-5 {
+  width: 30px;
+  height: 30px;
+
+  background: #f8fafc;
+
+  color: #6b7280;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 8px;
+}
+.cashier-info {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  min-width: 0;
+}
+
+.cashier-photo {
+  width: 34px;
+  height: 34px;
+
+  border-radius: 50%;
+
+  object-fit: cover;
+
+  flex-shrink: 0;
+
+  border: 2px solid #f1f5f9;
+}
+
+.cashier-info span {
+  font-size: 13px;
+
+  font-weight: 600;
+
+  color: #374151;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+.cashier-transactions {
+  font-size: 13px;
+
+  font-weight: 600;
+
+  color: #4b5563;
+
+  text-align: center;
+}
+
+.cashier-total {
+  font-size: 13px;
+
+  font-weight: 700;
+
+  color: #111827;
+
+  white-space: nowrap;
+
+  text-align: right;
+}
+/* ========================================
+   BEST SELLING
+======================================== */
+
+.report-grid-middle {
+  display: grid;
+
+  grid-template-columns: 2fr 1fr;
+
+  gap: 20px;
+}
+
+.best-selling-card {
+  height: 356px;
+
+  background: white;
+
+  border-radius: 16px;
+
+  border: 1px solid #edf1f5;
+
+  padding: 24px;
+
+  overflow: hidden;
+}
+.best-selling-header {
+  margin-bottom: 14px;
+}
+
+.best-selling-header h3 {
+  margin: 0;
+
+  font-size: 20px;
+  font-weight: 600;
+
+  color: #111827;
+}
+.best-selling-table {
+  width: 100%;
+}
+
+.best-selling-row {
+  display: grid;
+
+  grid-template-columns:
+    55px
+    minmax(150px, 1.8fr)
+    1fr
+    1.2fr
+    1.3fr;
+
+  align-items: center;
+
+  min-height: 48px;
+
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.best-selling-table-header {
+  min-height: 32px;
+
+  border-bottom: 1px solid #e5e7eb;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  color: #9ca3af;
+}
+.best-selling-table-header span:nth-child(1),
+.best-selling-row .best-selling-rank {
+  text-align: center;
+}
+
+.best-selling-table-header span:nth-child(3),
+.best-selling-row .best-selling-quantity {
+  text-align: center;
+}
+
+.best-selling-table-header span:nth-child(4),
+.best-selling-row .best-selling-revenue {
+  text-align: right;
+}
+
+.best-selling-table-header span:nth-child(5) {
+  text-align: right;
+}
+.best-selling-table-body {
+  max-height: 240px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+
+  scrollbar-color: #d1d5db transparent;
+}
+
+.best-selling-table-body::-webkit-scrollbar {
+  width: 5px;
+}
+
+.best-selling-table-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.best-selling-table-body::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+
+  border-radius: 10px;
+}
+
+.best-selling-table-body::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+.best-selling-rank {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.best-selling-rank-badge {
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 8px;
+
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* Rank 1 - Gold */
+
+.best-selling-rank-badge.rank-1 {
+  width: 34px;
+  height: 34px;
+
+  background: linear-gradient(135deg, #fff8d6, #ffe58a);
+
+  color: #d49a00;
+
+  border: 1px solid #f2cf58;
+
+  box-shadow: 0 3px 8px rgba(212, 154, 0, 0.15);
+}
+
+.best-selling-rank-badge.rank-1 svg {
+  font-size: 18px;
+}
+
+/* Rank 2 - Silver */
+
+.best-selling-rank-badge.rank-2 {
+  background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+
+  color: #64748b;
+
+  border: 1px solid #cbd5e1;
+}
+
+.best-selling-rank-badge.rank-2 svg {
+  font-size: 17px;
+}
+
+/* Rank 3 - Bronze */
+
+.best-selling-rank-badge.rank-3 {
+  background: linear-gradient(135deg, #fff1e6, #f5c9a5);
+
+  color: #b86b32;
+
+  border: 1px solid #e3a875;
+}
+
+.best-selling-rank-badge.rank-3 svg {
+  font-size: 17px;
+}
+
+.best-selling-rank-badge.rank-normal {
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #f8fafc;
+
+  color: #6b7280;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 7px;
+
+  font-size: 12px;
+  font-weight: 600;
+
+  flex-shrink: 0;
+}
+
+.best-selling-product {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  min-width: 0;
+}
+
+.best-selling-product-image {
+  width: 32px;
+  height: 32px;
+
+  object-fit: cover;
+
+  border-radius: 8px;
+
+  flex-shrink: 0;
+}
+
+.best-selling-product span {
+  font-size: 12px;
+
+  font-weight: 600;
+
+  color: #374151;
+
+  white-space: nowrap;
+
+  overflow: hidden;
+
+  text-overflow: ellipsis;
+}
+.best-selling-quantity {
+  font-size: 12px;
+
+  font-weight: 600;
+
+  color: #4b5563;
+
+  text-align: center;
+}
+
+.best-selling-revenue {
+  font-size: 12px;
+
+  font-weight: 600;
+
+  color: #111827;
+
+  white-space: nowrap;
+
+  text-align: right;
+}
+.best-selling-profit {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  gap: 6px;
+
+  white-space: nowrap;
+}
+
+.best-selling-profit > span:first-child {
+  font-size: 12px;
+
+  font-weight: 700;
+
+  color: #111827;
+}
+
+.profit-growth {
+  display: inline-flex;
+
+  align-items: center;
+
+  font-size: 10px;
+
+  font-weight: 700;
+}
+
+.profit-growth.positive {
+  color: #16a34a;
+}
+
+.profit-growth.negative {
+  color: #dc2626;
+}
+
+.payment-method-card {
+  min-height: 210px;
+  width: 100%;
+
+  background: white;
+  border-radius: 16px;
+  border: 1px solid #edf1f5;
+
+  overflow: hidden;
+}
+/* ========================================
+   SALES SUMMARY (namespaced, no conflict)
+======================================== */
+
+.rp-summary-card {
+  display: grid !important;
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  align-items: stretch;
+  background: #fff;
+  height: 120px;
+  border: 1px solid #edf1f5;
+  border-radius: 16px;
+  padding: 20px 24px;
+  box-sizing: border-box;
+}
+
+.rp-summary-item {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  gap: 12px;
+  padding: 0 20px;
+  min-width: 0;
+  position: relative;
+}
+
+.rp-summary-item:first-child {
+  padding-left: 0;
+}
+
+.rp-summary-item-last {
+  padding-right: 0;
+}
+
+.rp-summary-item:not(.rp-summary-item-last)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 70%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #e5e9ef 20%,
+    #e5e9ef 80%,
+    transparent 100%
+  );
+}
+
+.rp-summary-icon {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  border-radius: 12px;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.rp-icon-revenue {
+  background: #fff4cc;
+  color: #d49a00;
+}
+
+.rp-icon-cogs {
+  background: #fff0e6;
+  color: #ea7a20;
+}
+
+.rp-icon-gross {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.rp-icon-expenses {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.rp-icon-net {
+  background: #f0e7ff;
+  color: #7c3aed;
+}
+
+.rp-summary-content {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 6px;
+  min-width: 0;
+  line-height: 1;
+}
+
+.rp-summary-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  white-space: nowrap;
+}
+
+.rp-summary-value {
+  font-size: 17px;
+  font-weight: 700;
+  color: #111827;
+  white-space: nowrap;
+}
+
+.rp-summary-growth {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+  font-size: 10px;
+}
+
+.rp-positive {
+  color: #16a34a;
+  font-weight: 700;
+}
+
+.rp-negative {
+  color: #dc2626;
+  font-weight: 700;
+}
+
+.rp-summary-period {
+  color: #9ca3af;
+  font-weight: 500;
+}
+.cashier-photo {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  min-height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}

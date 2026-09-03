@@ -1,0 +1,212 @@
+.greeting {
+  margin-bottom: 24px;
+}
+
+.greeting h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 32px;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.greeting p {
+  margin-top: 8px;
+  font-size: 16px;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.wave {
+  display: inline-block;
+  transform-origin: 70% 70%;
+  animation: wave 2s infinite;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  width: 100%;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Card 1 */
+
+.small {
+  width: auto;
+  height: 150px;
+  padding: 20px;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  margin-top: 15px;
+}
+
+.card-header span {
+  font-size: 16px;
+  font-weight: 600;
+  color: #000000;
+  margin-top: -40px;
+}
+
+.icon {
+  width: 70px;
+  height: 70px;
+
+  background: #d7afc433;
+  border-radius: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon-hijau {
+  background: #22c55e33;
+}
+.icon-kuning {
+  background: #facc1533;
+}
+.icon-ungu {
+  background: #a855f733;
+}
+
+.icon svg {
+  font-size: 40px;
+  color: #5c3535;
+}
+
+.small h2 {
+  margin-top: -38px;
+  font-size: 20px;
+  color: #000000;
+  padding-left: 85px;
+  font-weight: 700;
+}
+.growth {
+  margin-left: 52px;
+  margin-top: 8px;
+
+  font-size: 13px;
+  font-weight: 500;
+  color: #666;
+  padding-left: 34px;
+}
+
+.growth span {
+  color: #22c55e;
+  font-weight: 600;
+}
+
+/* Card 2 */
+.activity {
+  width: auto;
+  height: 284px;
+}
+.activity-header {
+  padding: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.inventory {
+  width: auto;
+  height: 284px;
+}
+.inventory-header {
+  padding: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.alert-icon {
+  color: #ef4444;
+  font-size: 30px; /* ukuran icon */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-right: 20px;
+}
+.greeting-card {
+  width: 100%;
+  min-height: 120px;
+  background: linear-gradient(135deg, #8b5e3c, #c89b6d);
+  border-radius: 20px;
+  padding: 28px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  margin-bottom: 24px;
+  box-sizing: border-box;
+}
+
+.greeting-content h2 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.greeting-content p {
+  margin-top: 8px;
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+.greeting-date {
+  font-size: 14px;
+  font-weight: 500;
+  opacity: 0.9;
+}
